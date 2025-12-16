@@ -1,16 +1,16 @@
 from modelos.restaurante import Restaurante
+from modelos.cardapio.prato import Prato
+from modelos.cardapio.bebida import Bebida
 
 restaurante_01 = Restaurante('Reiwa', 'Japonês')
-restaurante_02 = Restaurante('CQsabe', 'Hamburguer')
-restaurante_03 = Restaurante('Nestor', 'Pizza')
+bebida_01 = Bebida('Suco de abacaxi',8,'grande')
+prato_01 = Prato('Strogonoff', 29, 'O melhor strogonoff da minha rua')
 
-restaurante_01.alternar_estado()
-restaurante_01.receber_avaliacao('Joao', 10)
-restaurante_01.receber_avaliacao('Maria', 7)
-restaurante_01.receber_avaliacao('Andre', 8)
+restaurante_01.adicionar_no_cardapio(bebida_01)
+restaurante_01.adicionar_no_cardapio(prato_01)
 
 def main():
-    Restaurante.listar_restaurantes()
+    restaurante_01.exibir_cardapio
 
 if __name__ == '__main__':
     main()
