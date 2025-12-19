@@ -6,10 +6,16 @@ app = FastAPI()
 
 @app.get('/api/hello')
 def hello_world():
+    '''
+    Endpoint que exibe hello world!
+    '''
     return {'hello':'world'}
 
 @app.get('/api/restaurantes')
 def get_restaurantes(restaurante: str = Query(None)):
+    '''
+    Endpoint para ver o cardápio dos restaurantes!
+    '''
     url = "https://gist.githubusercontent.com/Iankyoo/5e2ef19429a0980c98d037a33ba942e9/raw/restaurantes.json"
     response = requests.get(url)
 
@@ -22,7 +28,7 @@ def get_restaurantes(restaurante: str = Query(None)):
         for item in dados_json:
             if item['Company'] == restaurante:
                 dados_restaurante.append({
-                    "item": item["Item"],
+                    "item   ": item["Item"],
                     "price": item["price"],
                     "description": item["description"]
                 })
